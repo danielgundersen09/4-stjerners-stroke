@@ -334,16 +334,16 @@ function WheelPanel({ type, title, eyebrow, emptyMessage }) {
 function App() {
   return (
     <div className="min-h-screen overflow-hidden">
-      <header className="bg-[#48a8dc] text-white">
+      <header className="bg-[#48a8dc] text-white shadow-[inset_0_-1px_0_rgba(9,47,83,0.2)]">
         <div className="mx-auto flex h-[66px] max-w-[1360px] items-center justify-between px-5 sm:px-8">
           <a href="#top" className="flex items-center gap-2.5" aria-label="4-stjerners stroke">
             <img
               src={showLogo}
               alt="4-stjerners middag"
-              className="h-[54px] w-[97px] object-contain sm:h-[60px] sm:w-[108px]"
+              className="h-[54px] w-[97px] object-contain drop-shadow-[0_6px_18px_rgba(9,47,83,0.22)] sm:h-[60px] sm:w-[108px]"
             />
           </a>
-          <div className="hidden items-center gap-2 text-[10px] font-bold uppercase tracking-[0.18em] text-white/80 sm:flex">
+          <div className="hidden items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-white/85 sm:flex">
             <Sparkles size={14} className="text-[#f5c936]" aria-hidden="true" />
             Middagslaget
           </div>
@@ -351,7 +351,8 @@ function App() {
       </header>
 
       <main id="top" className="mx-auto max-w-[1360px] px-4 pb-12 sm:px-8">
-        <section className="relative isolate my-5 min-h-[320px] overflow-hidden rounded-lg bg-[#48a8dc] sm:my-7 sm:min-h-[335px]">
+        <section className="hero-shell relative isolate my-5 min-h-[320px] overflow-hidden rounded-[20px] border border-[#0b3d69]/10 bg-[#48a8dc] shadow-[0_22px_44px_rgba(17,76,120,0.12)] sm:my-7 sm:min-h-[335px]">
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.2),transparent_24%),linear-gradient(120deg,rgba(11,61,105,0.06),transparent_40%)]" />
           <div className="relative flex min-h-[320px] flex-col items-start gap-3 px-5 py-5 sm:min-h-[335px] sm:flex-row sm:items-center sm:gap-5 sm:px-9">
             <div className="relative z-10 w-full min-w-0 sm:w-[44%] sm:shrink-0">
               <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.22em] text-[#f5c936]">
@@ -363,6 +364,12 @@ function App() {
                 To trekninger.
               </h1>
               <p className="mt-2 text-xs text-white/75 sm:text-sm">4-stjerners stroke</p>
+
+              <div className="mt-5 flex flex-wrap gap-2.5">
+                <span className="hero-badge">13 deltagere</span>
+                <span className="hero-badge">2 roller</span>
+                <span className="hero-badge">ingen gjentakelser</span>
+              </div>
             </div>
             <div className="hero-logo-art relative mx-auto mt-3 w-[250px] max-w-[90%] shrink-0 sm:ml-auto sm:mt-0 sm:w-[52%] sm:max-w-[470px]" aria-hidden="true">
               <img src={showLogo} alt="" className="block h-auto w-full" />
@@ -417,9 +424,9 @@ function App() {
           />
         </div>
 
-        <footer className="flex flex-wrap items-center justify-between gap-2 py-5 text-[10px] text-[#8290a0]">
-          <span>God mat. Gode venner. En kveld å huske.</span>
-          <span>4-STJERNERS STROKE</span>
+        <footer className="flex flex-wrap items-center justify-between gap-2 border-t border-blue-950/10 pt-5 text-[10px] uppercase tracking-[0.14em] text-[#8290a0]">
+          <span className="text-[#536a7d]">God mat. Gode venner. En kveld å huske.</span>
+          <span className="font-bold text-[#0f4b7d]">4-STJERNERS STROKE</span>
         </footer>
       </main>
     </div>
